@@ -1,11 +1,22 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<%- include header.ejs %>
+<div class="index-container">
+  <div class="index-search">
+    <div class="text-search">
+      <input type="search" placeholder="搜索你喜欢的...">
+    </div>
+    <div class="search-hot"><span>猜你喜欢: </span>angelababy</div>
+    <div class="image-search">
+      <div class="image-search-cube">
+        <div style="background: rgba(200,0,0,.8)"></div>
+        <div style="background: rgba(255,0,0,.8)"></div>
+        <div style="background: rgba(255,200,0,.8)"></div>
+        <div style="background: rgba(255,255,0,.8)"></div>
+        <div style="background: rgba(255,255,200,.8)"></div>
+        <div class="image-search-block">
+          <input type="file">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include footer.ejs %>
