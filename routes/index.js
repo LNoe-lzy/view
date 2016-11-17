@@ -66,4 +66,12 @@ router.get('/logout', function (req, res) {
   res.redirect('/');
 });
 
+// view page
+router.get('/view', function (req, res) {
+  res.render('view', {
+    title: 'view',
+    user: req.session.user
+  });
+});
+
 module.exports = router;
