@@ -1,4 +1,5 @@
 * {
+  transition: all 300ms;
   list-style: none;
   text-decoration: none;
 }
@@ -336,12 +337,13 @@ img {
   width: 80%;
   float: left;
   margin-left: 1.5em;
+  position: relative;
 }
 .img-item {
   width: 30%;
   float: left;
-  margin-right: 1em;
-  margin-bottom: 1em;
+  margin-right: 16px;
+  margin-bottom: 20px;
   padding: .5em;
   box-shadow: 0 1px 3px rgba(0,0,0,.3);
 }
