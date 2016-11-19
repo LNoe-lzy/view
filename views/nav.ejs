@@ -7,7 +7,7 @@
         </div>
         <div class="nav-right">
             <% if (user) { %>
-            <a id="nav-user"><%= user.name %></a>
+            <a href="/u/<%= user._id %>" id="nav-user"><%= user.name %></a>
             <a href="/logout">退出</a>
             <% } else { %>
             <a id="signup">注册</a>

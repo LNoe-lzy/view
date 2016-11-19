@@ -9,7 +9,7 @@
     </div>
     <div class="header-right">
       <% if (user) { %>
-      <a id="right-user"><%= user.name %></a>
+      <a href="/u/<%= user._id %>" id="right-user"><%= user.name %></a>
       <a href="/logout">退出</a>
       <% } else { %>
       <a id="signup">注册</a>

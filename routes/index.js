@@ -74,4 +74,12 @@ router.get('/view', function (req, res) {
   });
 });
 
+//user page
+router.get('/u/:uid', function (req, res) {
+    res.render('user', {
+      title: 'VIEW',
+      user: req.session.user
+    });
+});
+
 module.exports = router;
