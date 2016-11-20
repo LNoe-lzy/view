@@ -4,7 +4,7 @@
 $(document).ready(function () {
     var view = new View();
     var viewModule = view.module();
-    viewModule.require(['sign', 'image'], function () {
+    viewModule.require(['sign', 'image', 'top'], function () {
         new SignModule();
         var imageModule = new ImageModule();
 
@@ -18,5 +18,7 @@ $(document).ready(function () {
 
         imageModule.waterfull(document.getElementById('view-right'), document.getElementsByClassName('img-item'));
         imageModule.waterfull(document.getElementById('user-container'), document.getElementsByClassName('img-item'));
+
+        new TopModule(document.getElementById('to-top'));
     });
 });
