@@ -1,0 +1,38 @@
+<%- include header.ejs %>
+
+
+<button id="btn" style="margin: 200px"> click me</button>
+
+<script>
+    $(document).ready(function () {
+        $('#btn').click(function () {
+            var params = {
+                // Request parameters
+                "q": "angelababy",
+                "count": "10",
+                "offset": "0",
+                "mkt": "en-us",
+                "safeSearch": "Moderate",
+            };
+
+            $.ajax({
+                url: "https://api.cognitive.microsoft.com/bing/v5.0/images/search?" + $.param(params),
+                beforeSend: function (xhrObj) {
+                    // Request headers
+                    xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key", "b269334d107e442db4c02a38984eebee");
+                },
+                type: "GET",
+                // Request body
+                data: "{body}"
+            })
+                .done(function (data) {
+                    console.log(data.value);
+                })
+                .fail(function () {
+                    console.log("error");
+                });
+        });
+    });
+</script>
+
+<%- include footer.ejs %>

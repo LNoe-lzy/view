@@ -1,0 +1,84 @@
+<%- include header.ejs %>
+
+<div class="analyse">
+    <div class="banner">
+        <div class="banner-wrapper"></div>
+    </div>
+
+    <h2 class="text-center">您提交的检索结果为:</h2>
+
+    <div class="wrapper">
+
+        <div class="analyse-left">
+            <img src="<%= imgurl %>">
+        </div>
+        <div class="analyse-right">
+            <div class="result-top">
+                <span>分析结果</span>
+                <span class="rec">推荐关键词: <a id="rec"><%= queryTxt %></a></span>
+            </div>
+            <div class="result-title">
+                <span class="result-left">可信度</span>
+                <span class="result-right">标签</span>
+            </div>
+            <div class="result-info">
+                <% tags.forEach(function(tag) { %>
+                <div class="item">
+                    <span class="number"
+                          style="width: <%= tag.tag_confidence / 100 * 300 %>px"><%= tag.tag_confidence %></span>
+                    <div class="item-right">
+                        <a class="title"><%= tag.tag_name %></a>
+                        <input type="checkbox"/>
+                    </div>
+                </div>
+                <% }) %>
+                <div class="research">
+                    <div class="top">
+                        <span>选择检索标签搜索</span>
+                        <a id="res-btn">搜索</a>
+                    </div>
+                    <div id="searchtag"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        var rec = $('#rec').html();
+        $('.title').each(function () {
+            var inner = this.innerHTML;
+            var url = encodeURI(rec + inner);
+            $(this).attr({
+                'href': '/search/' + url
+            })
+        });
+
+        var searchTag = $('#searchtag');
+
+        $('.item-right > input').change(function () {
+            var v = $(this).prev().html();
+            if ($(this).is(':checked')) {
+                searchTag.append('<span data-tag="' + v + '"> ' + v + ' </span>')
+            } else {
+                var rmel = searchTag.find('span[data-tag=' + v + ']');
+                rmel.remove();
+            }
+        });
+
+        $('#res-btn').click(function () {
+            var s = '';
+            searchTag.find('span').each(function () {
+                s += $(this).html();
+            });
+
+            var url = encodeURI(rec + s);
+
+            window.location.href = '/search/' + url;
+        });
+
+    });
+</script>
+
+<%- include footer.ejs %>

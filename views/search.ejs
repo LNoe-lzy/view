@@ -1,0 +1,24 @@
+<%- include header.ejs %>
+
+<div class="image">
+    <div class="banner">
+        <div class="banner-wrapper"></div>
+    </div>
+    <div class="wrapper">
+        <% imgs.forEach(function(img) { %>
+        <div class="item">
+            <div class="item-wrapper">
+                <img src="<%=img.thumbnailUrl%>">
+                <div class="overlay"></div>
+                <div class="content">
+                    <p>By <%= img.username %></p>
+                    <h3><%= img.name %></h3>
+                    <div class="meta"><%= img.datePublished %></div>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</div>
+
+<%- include footer.ejs %>

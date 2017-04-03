@@ -1,0 +1,47 @@
+<%- include header.ejs %>
+
+<div class="home">
+    <div class="home-wrapper">
+        <div class="inner">
+            <h1>Discover The World</h1>
+            <form method="post" enctype="multipart/form-data" action="/search">
+                <div class="search">
+                    <input type="text" placeholder="搜你想搜的" id="searchWord" name="queryText">
+                    <div class="image">
+                        <input type="file" name="image" id="image">
+                        <div class="tag">图像检索<span class="triangle"></span></div>
+                    </div>
+                    <div class="face">
+                        <input type="file" name="image" id="face">
+                        <div class="tag">人脸识别<span class="triangle"></span></div>
+                    </div>
+                </div>
+                <button id="searchBtn" type="submit">搜索</button>
+            </form>
+            <div class="icon">
+                <img src="/images/top.png">
+            </div>
+            <div id="select">
+                <a class="select-item"><img src="/images/directory-category-dining.png"></a>
+                <a class="select-item"><img src="/images/directory-category-drink.png"></a>
+                <a class="select-item"><img src="/images/directory-category-food.png"></a>
+                <a class="select-item"><img src="/images/directory-category-hotel.png"></a>
+                <a class="select-item"><img src="/images/directory-category-party.png"></a>
+                <a id="hideSelect"><img src="/images/bottom.png"> </a>
+            </div>
+        </div>
+    </div>
+    <div class="register">
+        <div class="right">
+            <img src="/images/right.png">
+        </div>
+        <div class="form">
+            <input type="text" placeholder="请输入用户名" class="username">
+            <input type="text" placeholder="请输入密码" class="password">
+            <button class="submit"></button>
+        </div>
+    </div>
+</div>
+<script src="/javascripts/home.js"></script>
+
+<%- include footer.ejs %>

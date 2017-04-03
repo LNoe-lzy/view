@@ -1,18 +1,14 @@
 /**
- * Created by lizongyuan on 2016/11/15.
+ * Created by lizongyuan on 2017/2/6.
  */
-// 声明模式
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
-    name: String,
-    password: String,
-    email: String
+    username: String,
+    password: String
 });
 
-// 创建模型
-var User = mongoose.model('users', UserSchema);
+var User = mongoose.model('user', UserSchema);
 
-// 导出User
 module.exports = User;

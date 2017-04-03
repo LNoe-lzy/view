@@ -1,0 +1,112 @@
+<%- include header.ejs %>
+
+<div class="image">
+    <div class="banner">
+        <div class="banner-wrapper"></div>
+    </div>
+    <div class="wrapper">
+        <% imgs.forEach(function(img) { %>
+        <div class="item">
+            <div class="item-wrapper">
+                <img src="<%=img.path%>">
+                <div class="overlay"></div>
+                <div class="content">
+                    <p>By <%= img.username %></p>
+                    <h3><%= img.desc %></h3>
+                    <div class="meta"><%= img.date %> - <a href=""><%= img.tag %></a></div>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+        <div class="item">
+            <div class="item-wrapper">
+                <img src="/images/view/1.jpg">
+                <div class="overlay"></div>
+                <div class="content">
+                    <p>By Lzy</p>
+                    <h3>“Sed ut perspiciatis unde omnis iste ... ”</h3>
+                    <div class="meta">2017 02, 07 - <a href="">Person</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-wrapper">
+                <img src="/images/view/2.jpg">
+                <div class="overlay"></div>
+                <div class="content">
+                    <p>By Lzy</p>
+                    <h3>“Sed ut perspiciatis unde omnis iste ... ”</h3>
+                    <div class="meta">2017 02, 07 - <a href="">Person</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-wrapper">
+                <img src="/images/view/3.jpg">
+                <div class="overlay"></div>
+                <div class="content">
+                    <p>By Lzy</p>
+                    <h3>“Sed ut perspiciatis unde omnis iste ... ”</h3>
+                    <div class="meta">2017 02, 07 - <a href="">Person</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-wrapper">
+                <img src="/images/view/4.jpg">
+                <div class="overlay"></div>
+                <div class="content">
+                    <p>By Lzy</p>
+                    <h3>“Sed ut perspiciatis unde omnis iste ... ”</h3>
+                    <div class="meta">2017 02, 07 - <a href="">Person</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-wrapper">
+                <img src="/images/view/5.jpg">
+                <div class="overlay"></div>
+                <div class="content">
+                    <p>By Lzy</p>
+                    <h3>“Sed ut perspiciatis unde omnis iste ... ”</h3>
+                    <div class="meta">2017 02, 07 - <a href="">Person</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-wrapper">
+                <img src="/images/view/6.jpg">
+                <div class="overlay"></div>
+                <div class="content">
+                    <p>By Lzy</p>
+                    <h3>“Sed ut perspiciatis unde omnis iste ... ”</h3>
+                    <div class="meta">2017 02, 07 - <a href="">Person</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-wrapper">
+                <img src="/images/view/7.jpg">
+                <div class="overlay"></div>
+                <div class="content">
+                    <p>By Lzy</p>
+                    <h3>“Sed ut perspiciatis unde omnis iste ... ”</h3>
+                    <div class="meta">2017 02, 07 - <a href="">Person</a></div>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-wrapper">
+                <img src="/images/view/8.jpg">
+                <div class="overlay"></div>
+                <div class="content">
+                    <p>By Lzy</p>
+                    <h3>“Sed ut perspiciatis unde omnis iste ... ”</h3>
+                    <div class="meta">2017 02, 07 - <a href="">Person</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include footer.ejs %>

@@ -2,9 +2,42 @@
 <html>
 <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script src="/javascripts/jquery.min.js"></script>
-    <script src="/javascripts/view.js"></script>
-    <script src="/javascripts/script.js"></script>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+    <script src="/javascripts/jquery-3.1.1.js"></script>
 </head>
 <body>
+<div class="header">
+    <div class="header-left">
+        <a href="/"><img src="/images/view.png"></a>
+    </div>
+    <div class="header-center">
+        <a href="/image">全部<span></span></a>
+        <a href="/tag">发现<span></span></a>
+    </div>
+    <div class="header-right">
+        <% if (user) { %>
+        <a class="user"><%= user.username %></a>
+        <a href="/logout" class="logout">退出</a>
+        <a class="plus"></a>
+        <% } else { %>
+        <a class="signin">注册</a>
+        <a class="signup">登录</a>
+        <% } %>
+    </div>
+</div>
+<div class="mask">
+    <div class="mask-wrapper">
+        <div class="inner">
+            <form method="post" enctype="multipart/form-data" action="/send">
+                <a class="close"></a>
+                <input type="text" placeholder="请输入描述" name="info">
+                <input type="text" placeholder="请输入标签" name="tag">
+                <div class="image">
+                    <input type="file" name="image">
+                </div>
+                <button>上传</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="/javascripts/header.js"></script>

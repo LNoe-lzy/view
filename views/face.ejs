@@ -1,0 +1,102 @@
+<%- include header.ejs %>
+
+<div class="face">
+    <div class="banner">
+        <div class="banner-wrapper"></div>
+    </div>
+
+    <h2 class="text-center">人脸检测结果为:</h2>
+
+    <div class="wrapper">
+        <div class="face-left">
+            <img src="<%= faceurl %>">
+        </div>
+        <div class="face-center">
+            <img src="<%= faceurl %>">
+            <% face.face.forEach(function (f) { %>
+            <div class="border"
+                 style="
+                        border: solid 2px #00b0ff;
+                        position: absolute;
+                        top: <%= f.y * 350 / face.image_width %>px;
+                        left:  <%= f.x * 350 / face.image_width %>px;
+                        height: <%= f.height * 350 / face.image_width %>px;
+                        width: <%= f.width * 350 / face.image_width %>px;">
+                <div class="tags" style="top: <%= f.height * 350 / face.image_width + 20 %>px ">
+                    <span>年龄: <%= f.age %></span>
+                    <% if (f.gender < 50) { %>
+                    <span>性别: 女</span>
+                    <% } else { %>
+                    <span>性别: 男</span>
+                    <% } %>
+                    <span>魅力值: <%= f.beauty %></span>
+                    <% if (f.expression < 30) { %>
+                    <span>表情: 普通</span>
+                    <% } else if (f.expression >= 30 && f.expression < 60) { %>
+                    <span>表情: 微笑</span>
+                    <% } else { %>
+                    <span>表情: 大笑</span>
+                    <% } %>
+                </div>
+            </div>
+
+            <% }) %>
+        </div>
+        <div class="face-right">
+            <img src="<%= faceurl %>">
+            <% face.face.forEach(function (faceshap) { %>
+            <% faceshap.face_shape.left_eye.forEach(function (ffs) { %>
+            <span class="point"
+                  style="
+                          left: <%= ffs.x * 350 / face.image_width %>px;
+                          top: <%= ffs.y * 350 / face.image_width %>px ">
+                        </span>
+            <% }) %>
+            <% faceshap.face_shape.right_eye.forEach(function (ffs) { %>
+            <span class="point"
+                  style="
+                          left: <%= ffs.x * 350 / face.image_width %>px;
+                          top: <%= ffs.y * 350 / face.image_width %>px ">
+                        </span>
+            <% }) %>
+            <% faceshap.face_shape.left_eyebrow.forEach(function (ffs) { %>
+            <span class="point"
+                  style="
+                          left: <%= ffs.x * 350 / face.image_width %>px;
+                          top: <%= ffs.y * 350 / face.image_width %>px ">
+                        </span>
+            <% }) %>
+            <% faceshap.face_shape.right_eyebrow.forEach(function (ffs) { %>
+            <span class="point"
+                  style="
+                          left: <%= ffs.x * 350 / face.image_width %>px;
+                          top: <%= ffs.y * 350 / face.image_width %>px ">
+                        </span>
+            <% }) %>
+            <% faceshap.face_shape.mouth.forEach(function (ffs) { %>
+            <span class="point"
+                  style="
+                          left: <%= ffs.x * 350 / face.image_width %>px;
+                          top: <%= ffs.y * 350 / face.image_width %>px ">
+                        </span>
+            <% }) %>
+            <% faceshap.face_shape.nose.forEach(function (ffs) { %>
+            <span class="point"
+                  style="
+                          left: <%= ffs.x * 350 / face.image_width %>px;
+                          top: <%= ffs.y * 350 / face.image_width %>px ">
+                        </span>
+            <% }) %>
+            <% faceshap.face_shape.face_profile.forEach(function (ffs) { %>
+            <span class="point"
+                  style="
+                          left: <%= ffs.x * 350 / face.image_width %>px;
+                          top: <%= ffs.y * 350 / face.image_width %>px ">
+                        </span>
+            <% }) %>
+            <% }) %>
+        </div>
+    </div>
+</div>
+
+<%- include footer.ejs %>
